@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-heading: var(--font-work-sans); /*taken from root layout*/
+  --font-body: var(--font-geist-sans);
+  --color-primary: #f99991;
+  --color-primary-50: #f99991;
+  --color-primary-400: #f99991;
+  --color-primary-600: #f88379;
+}
+
+@layer base {
+  h1 {
+    @apply font-[700] text-[32px] sm:text-[34px] md:text-[36px]  text-[#000000d1] leading-[115%] md:leading-[110%] tracking-[1.2px] md:tracking-[1px];
+    font-family: var(--font-heading);
+  }
+
+  h3 {
+    @apply font-[700] text-[24px] md:text-[26px] lg:text-[28px] text-zinc-800 font-heading leading-[130%] md:leading-[120%] tracking-[0.7px] md:tracking-[0.5px];
+  }
+
+  h5 {
+    @apply font-[600] text-[18px] md:text-[20px] lg:text-[22px] text-zinc-800 font-heading leading-[115%] md:leading-[110%] tracking-[0.5px] md:tracking-[0.4px];
+  }
+
+  h6 {
+    @apply font-[600] text-[17px] lg:text-[18px] text-zinc-800 font-heading tracking-[0.4px] md:tracking-[0.2px] leading-[125%] md:leading-[120%];
+  }
+
+  p {
+    @apply font-[450] text-[15px] md:text-[16px] text-neutral-700 font-body leading-[165%] md:leading-[160%] tracking-[0.4px] md:tracking-[0px];
+  }
+
+
+  .caption {
+    @apply font-[450] text-[14px] text-[#000000a6] font-body leading-[165%] md:leading-[160%] tracking-[0.6px] md:tracking-[0.4px];
+  }
+
+
+  .consistent {
+    @apply container mx-auto px-4 md:px-6 xl:px-8 2xl:px-10;
+  }
+
+}
+
+/* iOS style scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
