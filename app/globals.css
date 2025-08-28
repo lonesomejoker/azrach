@@ -15,14 +15,6 @@
     font-family: var(--font-heading);
   }
 
-  h3 {
-    @apply font-[700] text-[24px] md:text-[26px] lg:text-[28px] text-zinc-800 font-heading leading-[130%] md:leading-[120%] tracking-[0.7px] md:tracking-[0.5px];
-  }
-
-  h5 {
-    @apply font-[600] text-[18px] md:text-[20px] lg:text-[22px] text-zinc-800 font-heading leading-[115%] md:leading-[110%] tracking-[0.5px] md:tracking-[0.4px];
-  }
-
   h6 {
     @apply font-[600] text-[17px] lg:text-[18px] text-zinc-800 font-heading tracking-[0.4px] md:tracking-[0.2px] leading-[125%] md:leading-[120%];
   }
