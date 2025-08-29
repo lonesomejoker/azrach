@@ -1,6 +1,7 @@
 import { Geist, Work_Sans } from "next/font/google";
 import "./globals.css";
 import 'fomantic-ui-css/semantic.min.css';
+import { ToastContainer } from "react-toastify";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -24,6 +25,8 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable}  antialiased  ${workSans.variable} `}
       >
         {children}
+              <ToastContainer position="top-center" autoClose={3000} />
+        
       </body>
     </html>
   );

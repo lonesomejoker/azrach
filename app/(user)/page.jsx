@@ -9,11 +9,13 @@ import CardLayout from "@/components/CardLayout";
 import { useEffect, useState } from "react";
 import { fetchUsers } from "@/components/utils/Elements";
 import Link from "next/link";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const USERS_PER_PAGE = 5;
 
 const Home = () => {
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error, isSuccess } = useQuery({
     queryKey: ["users"],
     queryFn: fetchUsers,
   });
@@ -27,6 +29,15 @@ const Home = () => {
     const layout = localStorage.getItem("userLayout");
     if (layout) setSelectedLayout(layout);
   }, [selectedLayout]);
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success(`Users loaded successfully 🎉 (Total: ${data.length})`);
+    }
+    if (isError) {
+      toast.error(`Error fetching users: ${error.message}`);
+    }
+  }, [isSuccess, isError, data, error]);
 
   const handleActiveLayout = (layout) => {
     setSelectedLayout(layout);
@@ -57,7 +68,14 @@ const Home = () => {
     return (
       <FaSpinner className="text-neutral-800 text-center mx-auto mt-[5rem] text-[4rem] animate-spin" />
     );
-  if (isError) return <p>Error: {error.message}</p>;
+
+  if (isError)
+    return (
+      <div className="ui error message mt-[5rem]">
+        <div className="header">Error fetching users</div>
+        <p>{error.message}</p>
+      </div>
+    );
 
   return (
     <div className="consistent w-full my-[1.5rem] sm:my-[2rem]">

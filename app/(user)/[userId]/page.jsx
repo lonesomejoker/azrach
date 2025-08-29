@@ -9,7 +9,6 @@ import { GrLocation } from "react-icons/gr";
 import { IoEarthOutline } from "react-icons/io5";
 import { RiHomeOfficeLine } from "react-icons/ri";
 import { useRouter } from "next/navigation";
-import HourGlass from "@/components/reusables/HourGlass";
 import { FaSpinner } from "react-icons/fa";
 
 const UserProfile = (props) => {
@@ -60,7 +59,6 @@ const UserProfile = (props) => {
         <h1 className="text-center text-indigo-600 text-2xl font-bold  ">
           User Profile
         </h1>
-        <Suspense fallback={<HourGlass />}>
           <section className=" flex flex-col lg:flex-row gap-8 items-start mt-[2.5rem]">
             <div className=" rounded-xl p-8 bg-gray-100 w-full lg:w-[26%]">
               <div className="size-[6rem] font-[600] text-[2.5rem] mx-auto tracking-[0.7px] rounded-full bg-emerald-400 text-white flex items-center justify-center">
@@ -101,7 +99,6 @@ const UserProfile = (props) => {
               ))}
             </div>
           </section>
-        </Suspense>
       </div>
     </section>
   );
