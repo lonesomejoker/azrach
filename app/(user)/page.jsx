@@ -55,7 +55,7 @@ const Home = () => {
 
   if (isLoading)
     return (
-      <FaSpinner className="text-indigo-500 text-center mx-auto mt-[5rem] text-[4rem] animate-spin" />
+      <FaSpinner className="text-neutral-800 text-center mx-auto mt-[5rem] text-[4rem] animate-spin" />
     );
   if (isError) return <p>Error: {error.message}</p>;
 
